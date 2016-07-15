@@ -27,8 +27,13 @@ class User extends Authenticatable
     
     public function address(){
 
-        return $this->hasOne('App\Address', 'address_user', 'user_id', 'address_id');
+        return $this->belongsToMany('App\Address', 'address_user', 'user_id', 'address_id', 'id');
         
     }
     
+    public function addresses(){
+        
+        return $this->address()->get();
+        
+    }
 }

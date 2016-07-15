@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('tinker', function () {
+    return view('tinker');
+});
+
+
+Route::any('code/excecute', 'DebugController@excecute');
